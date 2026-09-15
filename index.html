@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>toogood AI Products</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap">
+<style>
+:root{
+  --ground:#E9EAE3;
+  --panel:#F4F5F0;
+  --panel-2:#DFE1D7;
+  --well:#0B0D09;
+  --ink:#14170F;
+  --ink-2:#5C6155;
+  --ink-3:#878C7D;
+  --rule:#D0D3C6;
+  --rule-strong:#B6BAA9;
+  --accent:#6E5E12;
+  --accent-ink:#5A4C0E;
+  --accent-soft:rgba(110,94,18,.10);
+  --shadow:0 1px 2px rgba(20,23,15,.06), 0 8px 28px rgba(20,23,15,.07);
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E100B;
+    --panel:#171A13;
+    --panel-2:#1F2319;
+    --well:#000000;
+    --ink:#E9EBE0;
+    --ink-2:#9BA18F;
+    --ink-3:#6E7464;
+    --rule:#292D21;
+    --rule-strong:#3A3F2E;
+    --accent:#C9B356;
+    --accent-ink:#D8C471;
+    --accent-soft:rgba(201,179,86,.12);
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 32px rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E100B;
+  --panel:#171A13;
+  --panel-2:#1F2319;
+  --well:#000000;
+  --ink:#E9EBE0;
+  --ink-2:#9BA18F;
+  --ink-3:#6E7464;
+  --rule:#292D21;
+  --rule-strong:#3A3F2E;
+  --accent:#C9B356;
+  --accent-ink:#D8C471;
+  --accent-soft:rgba(201,179,86,.12);
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 32px rgba(0,0,0,.45);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+.wrap{
+  max-width:1160px;
+  margin:0 auto;
+  padding-inline:20px;
+}
+
+/* ---------- masthead ---------- */
+.masthead{padding-block:48px 34px}
+.slug{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 20px;
+  align-items:baseline;
+  padding-bottom:16px;
+  border-bottom:1px solid var(--rule);
+}
+.slug b{color:var(--accent-ink);font-weight:600}
+.mast-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);
+  gap:44px;
+  align-items:end;
+  padding-top:34px;
+}
+h1{
+  font-family:var(--display);
+  font-weight:800;
+  font-size:clamp(40px,7vw,78px);
+  line-height:.96;
+  letter-spacing:-.025em;
+  margin:0;
+  text-wrap:balance;
+}
+h1 .lc{text-transform:lowercase}
+h1 em{
+  font-style:normal;
+  color:var(--accent-ink);
+}
+.standfirst{
+  font-size:clamp(17px,2.1vw,20px);
+  line-height:1.55;
+  color:var(--ink-2);
+  margin:0;
+  max-width:46ch;
+  font-weight:300;
+}
+.standfirst strong{color:var(--ink);font-weight:500}
+
+/* ---------- index strip ---------- */
+.index{
+  margin-top:44px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.index a{
+  text-decoration:none;
+  padding:18px 20px 20px 0;
+  border-right:1px solid var(--rule);
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  transition:color .15s;
+}
+.index a:last-child{border-right:0}
+.index a:hover{color:var(--accent-ink)}
+.idx-no{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.14em;
+  color:var(--ink-3);
+}
+.idx-name{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:15px;
+  line-height:1.25;
+  letter-spacing:-.01em;
+}
+
+/* ---------- product section ---------- */
+.product{
+  padding-block:80px;
+  border-bottom:1px solid var(--rule);
+}
+.product:last-of-type{border-bottom:0}
+.p-head{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);
+  gap:48px;
+  align-items:start;
+  margin-bottom:44px;
+}
+.p-tag{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--accent-ink);
+  display:block;
+  margin-bottom:14px;
+}
+h2{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(28px,4.2vw,44px);
+  line-height:1.02;
+  letter-spacing:-.022em;
+  margin:0 0 18px;
+  text-wrap:balance;
+}
+.p-lede{
+  font-size:19px;
+  line-height:1.55;
+  color:var(--ink-2);
+  margin:0;
+  font-weight:300;
+  max-width:40ch;
+}
+.p-lede strong{color:var(--ink);font-weight:500}
+
+/* spec list */
+.spec{
+  margin:0;
+  display:grid;
+  gap:0;
+  border-top:1px solid var(--rule);
+}
+.spec div{
+  display:grid;
+  grid-template-columns:132px minmax(0,1fr);
+  gap:20px;
+  padding:13px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.spec dt{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+}
+.spec dd{
+  margin:0;
+  font-size:16px;
+  line-height:1.5;
+  color:var(--ink-2);
+}
+.spec dd strong{color:var(--ink);font-weight:500}
+
+/* ---------- evidence grid ---------- */
+.evidence{
+  display:grid;
+  gap:26px;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  align-items:start;
+}
+.evidence.wide{grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
+
+figure.piece{margin:0;display:flex;flex-direction:column;gap:10px}
+.well{
+  position:relative;
+  background:var(--well);
+  border:1px solid var(--rule-strong);
+  overflow:hidden;
+  width:100%;
+}
+.well.r916{aspect-ratio:9/16}
+.well.r169{aspect-ratio:16/9}
+.well video,.well img.poster{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:var(--well);
+}
+.well video{z-index:2;opacity:0;transition:opacity .25s}
+.well.live video{opacity:1}
+.well.live .playbtn,.well.live img.poster{opacity:0;pointer-events:none}
+img.poster{z-index:1;transition:opacity .25s}
+.playbtn{
+  position:absolute;
+  inset:0;
+  z-index:3;
+  border:0;
+  background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,.05) 55%,rgba(0,0,0,.25));
+  color:#fff;
+  cursor:pointer;
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-start;
+  padding:14px;
+  transition:opacity .25s;
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.playbtn span{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+}
+.playbtn span::before{
+  content:"";
+  width:30px;height:30px;
+  border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.85);
+  background:rgba(0,0,0,.35);
+  background-image:linear-gradient(to right,transparent 0,transparent 100%);
+  display:inline-block;
+  position:relative;
+}
+.playbtn span::after{
+  content:"";
+  position:absolute;
+  left:11px;
+  width:0;height:0;
+  border-left:9px solid #fff;
+  border-top:6px solid transparent;
+  border-bottom:6px solid transparent;
+}
+.playbtn:hover span::before{border-color:#fff;background:rgba(0,0,0,.6)}
+
+figcaption{
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px 12px;
+  align-items:baseline;
+}
+.cap-name{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:14.5px;
+  letter-spacing:-.005em;
+  line-height:1.3;
+  flex:1 1 100%;
+}
+.cap-meta{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.1em;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.cap-note{
+  font-size:14px;
+  line-height:1.45;
+  color:var(--ink-2);
+  flex:1 1 100%;
+  font-weight:300;
+}
+
+/* ---------- carousel / contact sheet ---------- */
+.sheet{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:16px;
+  margin-top:8px;
+}
+.sheet button{
+  padding:0;border:1px solid var(--rule-strong);
+  background:var(--panel);
+  cursor:pointer;
+  display:block;
+  position:relative;
+  overflow:hidden;
+  transition:border-color .15s,transform .15s;
+}
+.sheet button:hover{border-color:var(--accent);transform:translateY(-2px)}
+.sheet button img{width:100%;height:auto;display:block}
+.sheet .plate{
+  position:absolute;
+  top:0;left:0;
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.1em;
+  background:var(--accent);
+  color:var(--ground);
+  padding:3px 8px;
+}
+:root[data-theme="dark"] .sheet .plate,
+:root:not([data-theme="light"]) .sheet .plate{color:#0E100B}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .sheet .plate{color:#F4F5F0}}
+
+.sheet-cap{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  margin:26px 0 12px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* instagram card */
+.ig{
+  display:grid;
+  grid-template-columns:minmax(0,260px) minmax(0,1fr);
+  gap:24px;
+  align-items:center;
+  border:1px solid var(--rule-strong);
+  background:var(--panel);
+  padding:20px;
+  margin-top:26px;
+  text-decoration:none;
+  transition:border-color .15s;
+}
+.ig:hover{border-color:var(--accent)}
+.ig-shot{
+  background:var(--well);
+  border:1px solid var(--rule);
+  aspect-ratio:4/5;
+  position:relative;
+  overflow:hidden;
+}
+.ig-shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ig-shot.missing::after{
+  content:"thumbnail pending";
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);
+  background:var(--panel-2);
+  text-align:center;padding:16px;
+}
+.ig-body h3{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:21px;
+  line-height:1.15;
+  letter-spacing:-.015em;
+  margin:0 0 10px;
+}
+.ig-body p{margin:0 0 14px;color:var(--ink-2);font-size:15.5px;font-weight:300;line-height:1.5}
+.ig-link{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--accent-ink);
+  display:inline-flex;align-items:center;gap:7px;
+}
+.ig-link::after{content:"\2197"}
+
+/* download strip */
+.dl{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 22px;
+  align-items:center;
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px solid var(--rule);
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+.dl a{color:var(--accent-ink);text-decoration:none;display:inline-flex;gap:7px;align-items:center}
+.dl a:hover{text-decoration:underline;text-underline-offset:4px}
+.dl span{color:var(--ink-3)}
+
+/* ---------- lightbox ---------- */
+.lb{
+  position:fixed;inset:0;z-index:100;
+  background:rgba(8,10,6,.94);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:56px 20px 20px;
+}
+.lb[open],.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.lb-bar{
+  position:absolute;top:0;left:0;right:0;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 18px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.13em;
+  text-transform:uppercase;color:rgba(255,255,255,.75);
+}
+.lb-bar button{
+  background:none;border:1px solid rgba(255,255,255,.3);
+  color:#fff;cursor:pointer;
+  font-family:var(--mono);font-size:11px;letter-spacing:.13em;
+  padding:6px 12px;text-transform:uppercase;
+}
+.lb-bar button:hover{border-color:#fff}
+.lb-nav{display:flex;gap:8px}
+
+/* ---------- footer ---------- */
+footer{
+  padding-block:56px 72px;
+  border-top:1px solid var(--rule);
+  margin-top:8px;
+}
+.foot-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
+  gap:40px;
+  align-items:start;
+}
+.foot-grid h3{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(24px,3.4vw,34px);
+  line-height:1.05;
+  letter-spacing:-.02em;
+  margin:0 0 12px;
+  text-wrap:balance;
+}
+.foot-grid p{margin:0;color:var(--ink-2);font-weight:300;max-width:42ch}
+.contact{
+  display:grid;
+  gap:0;
+  border-top:1px solid var(--rule);
+}
+.contact a,.contact span{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  text-decoration:none;
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.06em;
+}
+.contact a:hover{color:var(--accent-ink)}
+.contact b{color:var(--ink-3);font-weight:400;letter-spacing:.13em;text-transform:uppercase;font-size:10.5px}
+.colophon{
+  margin-top:40px;
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 20px;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .mast-grid,.p-head,.foot-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+  .index{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .index a{border-bottom:1px solid var(--rule);padding-right:16px}
+  .index a:nth-child(2){border-right:0}
+  .index a:nth-child(3),.index a:nth-child(4){border-bottom:0}
+  .product{padding-block:58px}
+  .ig{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .masthead{padding-block:32px 24px}
+  .spec div{grid-template-columns:minmax(0,1fr);gap:2px}
+  .evidence{grid-template-columns:minmax(0,1fr)}
+  .evidence figure.piece{max-width:340px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="slug">
+      <span><b>toogood</b></span>
+      <span>AI product line</span>
+      <span>Ahmedabad</span>
+      <span>September 2026</span>
+      <span>Internal reference copy</span>
+    </div>
+
+    <div class="mast-grid">
+      <h1>Four machines that<br>make video <em>without<br>a shoot.</em></h1>
+      <p class="standfirst">
+        <strong>toogood</strong> builds production systems, not one-off films. Each of these
+        four takes a single setup and runs it again and again, so the second video costs a
+        fraction of the first and the hundredth costs almost nothing. Everything below is
+        real work. Press play on any of it.
+      </p>
+    </div>
+
+    <nav class="index" aria-label="Products">
+      <a href="#p1"><span class="idx-no">01</span><span class="idx-name">Founder Branding Autopilot</span></a>
+      <a href="#p2"><span class="idx-no">02</span><span class="idx-name">Video Editing Automation</span></a>
+      <a href="#p3"><span class="idx-no">03</span><span class="idx-name">Repeat Video Automation</span></a>
+      <a href="#p4"><span class="idx-no">04</span><span class="idx-name">Static Ads Engine</span></a>
+    </nav>
+  </header>
+
+  <!-- ============ 01 ============ -->
+  <section class="product" id="p1">
+    <div class="p-head">
+      <div>
+        <span class="p-tag">Product 01</span>
+        <h2>Founder Branding Autopilot</h2>
+        <p class="p-lede">
+          An AI clone of the founder plus a video editing agent, wired together into a machine
+          that puts out <strong>a video a day</strong> on real topics from the founder's own industry.
+        </p>
+      </div>
+      <dl class="spec">
+        <div><dt>What it is for</dt><dd>Continuous presence. Mass production of talking head video so a founder shows up every day without booking a single hour of camera time.</dd></div>
+        <div><dt>What it is not</dt><dd><strong>Not creative viral video chasing views.</strong> That is a different job with a different price. This is volume and consistency.</dd></div>
+        <div><dt>Input from client</dt><dd>One clone session. After that, topics only.</dd></div>
+        <div><dt>Output</dt><dd>Talking head videos, daily, in the founder's face and voice.</dd></div>
+      </dl>
+    </div>
+
+    <div class="evidence wide">
+      <figure class="piece">
+        <div class="well r169" data-src="assets/video/founder-clone.mp4">
+          <img class="poster" src="assets/poster/founder-clone.jpg" alt="AI clone of Kushank Joshi, talking to camera" loading="lazy">
+          <button class="playbtn" type="button" aria-label="Play the AI clone sample"><span>Play 0:18</span></button>
+        </div>
+        <figcaption>
+          <span class="cap-name">The clone itself</span>
+          <span class="cap-meta">0:18 / 16:9 / 1280&times;720</span>
+          <span class="cap-note">Kushank, generated. No camera, no lighting, no studio hour. This is the asset the daily machine runs on.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="piece">
+        <div class="well r916" data-src="assets/video/founder-reel.mp4">
+          <img class="poster" src="assets/poster/founder-reel.jpg" alt="Founder talking head reel with captions and overlay graphics" loading="lazy">
+          <button class="playbtn" type="button" aria-label="Play the finished founder reel"><span>Play 0:19</span></button>
+        </div>
+        <figcaption>
+          <span class="cap-name">What comes off the line</span>
+          <span class="cap-meta">0:19 / 9:16 / 1080&times;1920</span>
+          <span class="cap-note">A finished daily post. Captions, overlay graphics, cuts and emphasis all applied by the editing agent, not by hand.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 02 ============ -->
+  <section class="product" id="p2">
+    <div class="p-head">
+      <div>
+        <span class="p-tag">Product 02</span>
+        <h2>Video Editing Automation</h2>
+        <p class="p-lede">
+          Long form goes in, short form comes out. An agent that cuts a
+          <strong>podcast or an interview into reels</strong> without an editor sitting through
+          the footage.
+        </p>
+      </div>
+      <dl class="spec">
+        <div><dt>Scope</dt><dd><strong>Talking head footage only.</strong> This is deliberate. Narrow input is what makes the automation reliable.</dd></div>
+        <div><dt>Input from client</dt><dd>The long form file. A podcast episode, a webinar, a recorded interview.</dd></div>
+        <div><dt>Output</dt><dd>Cut reels, captioned and graded, ready to post.</dd></div>
+        <div><dt>Who it suits</dt><dd>Anyone already recording long form and not getting short form out of it.</dd></div>
+      </dl>
+    </div>
+
+    <div class="evidence">
+      <figure class="piece">
+        <div class="well r916" data-src="assets/video/editing-agent.mp4">
+          <img class="poster" src="assets/poster/editing-agent.jpg" alt="Black and white talking head cut from a long form interview" loading="lazy">
+          <button class="playbtn" type="button" aria-label="Play the editing agent sample"><span>Play 0:45</span></button>
+        </div>
+        <figcaption>
+          <span class="cap-name">Cut by the agent</span>
+          <span class="cap-meta">0:45 / 9:16 / 1080&times;1920</span>
+          <span class="cap-note">A reel pulled out of a long form recording. Reframed to vertical, graded, captioned.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 03 ============ -->
+  <section class="product" id="p3">
+    <div class="p-head">
+      <div>
+        <span class="p-tag">Product 03</span>
+        <h2>Repeat Video Automation</h2>
+        <p class="p-lede">
+          Build the format once, then run it for as long as the client needs it. This is the
+          widest of the four, because <strong>most video a company needs is the same video again</strong>
+          with different content in it.
+        </p>
+      </div>
+      <dl class="spec">
+        <div><dt>Training and SOP</dt><dd>Process videos for L&amp;D departments, factories and floor staff. One module built, the rest of the series follows the same spine.</dd></div>
+        <div><dt>Explainers</dt><dd>Any industry. The format holds, the subject changes.</dd></div>
+        <div><dt>Owned characters</dt><dd>A mascot or presenter a company owns outright and can use forever, without a fee per appearance.</dd></div>
+        <div><dt>Channels</dt><dd>Faceless YouTube channels and Instagram reels that need output every week, not once.</dd></div>
+      </dl>
+    </div>
+
+    <div class="evidence">
+      <figure class="piece">
+        <div class="well r916" data-src="assets/video/sop-makeba.mp4">
+          <img class="poster" src="assets/poster/sop-makeba.jpg" alt="Staff training module titled Five things, every shift" loading="lazy">
+          <button class="playbtn" type="button" aria-label="Play the staff training module"><span>Play 1:15</span></button>
+        </div>
+        <figcaption>
+          <span class="cap-name">Staff training module</span>
+          <span class="cap-meta">1:15 / 9:16 / 720&times;1264</span>
+          <span class="cap-note">A hospitality SOP video, built as episode one of a series. Every later module reuses this build.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="piece">
+        <div class="well r916" data-src="assets/video/brand-ip-lion.mp4">
+          <img class="poster" src="assets/poster/brand-ip-lion.jpg" alt="Lion character presenting inside a kitchen" loading="lazy">
+          <button class="playbtn" type="button" aria-label="Play the owned character sample"><span>Play 0:37</span></button>
+        </div>
+        <figcaption>
+          <span class="cap-name">An owned character</span>
+          <span class="cap-meta">0:37 / 9:16 / 720&times;1280</span>
+          <span class="cap-note">A brand mascot that can be dropped into any scene, any script, any number of times. The company owns the character.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="piece">
+        <div class="well r169" data-src="assets/video/school-series.mp4">
+          <img class="poster" src="assets/poster/school-series.jpg" alt="Animated series episode set at an amusement park gate" loading="lazy">
+          <button class="playbtn" type="button" aria-label="Play the school series sample"><span>Play 1:05</span></button>
+        </div>
+        <figcaption>
+          <span class="cap-name">Series video, for a school</span>
+          <span class="cap-meta">1:05 / 16:9 / 1280&times;720</span>
+          <span class="cap-note">One template, built to be re-run per child with the name and character swapped. The clearest version of what repeat automation means.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 04 ============ -->
+  <section class="product" id="p4">
+    <div class="p-head">
+      <div>
+        <span class="p-tag">Product 04</span>
+        <h2>Static Ads Engine</h2>
+        <p class="p-lede">
+          Carousels, posts and static ads at volume. Point it at a blog and it returns the
+          whole carousel. Or <strong>hand it one reference image</strong> and it rebuilds that look
+          around your business.
+        </p>
+      </div>
+      <dl class="spec">
+        <div><dt>From a blog</dt><dd>One article in, a finished multi slide carousel out.</dd></div>
+        <div><dt>From a reference</dt><dd>Give it any post whose style you want to borrow. It converts the trend into your product, your language, your market.</dd></div>
+        <div><dt>From nothing</dt><dd>It can also work the industry on its own and come back with the idea.</dd></div>
+        <div><dt>Formats</dt><dd>Instagram posts, carousels, static ads, and video carousels.</dd></div>
+        <div><dt>Scale of the problem</dt><dd>Kotak Mahindra Bank's static creative operation was described on the ThinkSchool podcast. Large brands run creative at a volume no manual design team can match.</dd></div>
+      </dl>
+    </div>
+
+    <p class="sheet-cap">Deck 01 &mdash; one blog to twelve slides, and three reference conversions</p>
+    <div class="sheet" id="sheet"></div>
+
+    <div class="dl">
+      <a href="assets/doc/static-ads-carousel.pdf" target="_blank" rel="noopener">Open the full PDF</a>
+      <span>7 pages / 19.8 MB</span>
+    </div>
+
+    <p class="sheet-cap">Also does video carousels</p>
+    <a class="ig" href="https://www.instagram.com/p/DWgfq6hCoDx/" target="_blank" rel="noopener">
+      <span class="ig-shot" id="igshot">
+        <img src="assets/poster/carousel-video-ig.jpg" alt="Instagram carousel first slide reading Implantation bleeding? Spotting ya period?" loading="lazy">
+      </span>
+      <span class="ig-body">
+        <h3>A video carousel, live on Instagram</h3>
+        <p>The same engine, with a video as the opening slide instead of a static one. Built on a medical topic in Hinglish, for an audience that would scroll past an English explainer.</p>
+        <span class="ig-link">View the post on Instagram</span>
+      </span>
+    </a>
+  </section>
+
+  <footer>
+    <div class="foot-grid">
+      <div>
+        <h3>The point of all four is the same.</h3>
+        <p>
+          Build the system once. Run it for as long as it is useful. What a shoot gives you in
+          one day, these give you every week, for a fraction of what the shoot would have cost.
+        </p>
+      </div>
+      <div class="contact">
+        <a href="https://toogoodai.in" target="_blank" rel="noopener"><b>Site</b><span>toogoodai.in</span></a>
+        <a href="mailto:toogoodfolks@gmail.com"><b>Email</b><span>toogoodfolks@gmail.com</span></a>
+        <a href="tel:+917574003272"><b>Phone</b><span>+91 75740 03272</span></a>
+        <a href="https://own.page/toogood" target="_blank" rel="noopener"><b>Portfolio</b><span>own.page/toogood</span></a>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>toogood Productions</span>
+      <span>Ahmedabad, Gujarat</span>
+      <span>Kushank Joshi / Harsh Dhakan</span>
+      <span>Not for public distribution</span>
+    </div>
+  </footer>
+
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Carousel page viewer">
+  <div class="lb-bar">
+    <span id="lbcount">Page 1 of 7</span>
+    <span class="lb-nav">
+      <button type="button" id="lbprev">Prev</button>
+      <button type="button" id="lbnext">Next</button>
+      <button type="button" id="lbclose">Close</button>
+    </span>
+  </div>
+  <img id="lbimg" src="" alt="">
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---- click to load video, one at a time, loops on play ---- */
+  var wells = Array.prototype.slice.call(document.querySelectorAll(".well[data-src]"));
+  var players = [];
+
+  wells.forEach(function(well){
+    var btn = well.querySelector(".playbtn");
+    btn.addEventListener("click", function(){
+      var v = well.querySelector("video");
+      if(!v){
+        v = document.createElement("video");
+        v.src = well.getAttribute("data-src");
+        v.controls = true;
+        v.loop = true;
+        v.playsInline = true;
+        v.setAttribute("playsinline","");
+        v.preload = "auto";
+        well.appendChild(v);
+        players.push(v);
+        v.addEventListener("play", function(){
+          players.forEach(function(o){ if(o !== v && !o.paused){ o.pause(); } });
+        });
+      }
+      well.classList.add("live");
+      var p = v.play();
+      if(p && p.catch){ p.catch(function(){}); }
+    });
+  });
+
+  /* ---- contact sheet, built from the rendered PDF pages ---- */
+  var PAGES = 7;
+  var labels = [
+    "Blog to carousel, twelve slides",
+    "How this works, reference one",
+    "Output set, reference one",
+    "How this works, reference two",
+    "Output set, reference two",
+    "How this works, reference three",
+    "Output set, reference three"
+  ];
+  var sheet = document.getElementById("sheet");
+  var frag = document.createDocumentFragment();
+  for(var i=1;i<=PAGES;i++){
+    var n = i < 10 ? "0"+i : ""+i;
+    var b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("data-page", i);
+    b.setAttribute("aria-label","Open page "+i+", "+labels[i-1]);
+    b.innerHTML = '<span class="plate">'+n+'</span>'+
+      '<img src="assets/carousel/page-'+n+'.jpg" alt="'+labels[i-1]+'" loading="lazy">';
+    frag.appendChild(b);
+  }
+  sheet.appendChild(frag);
+
+  /* ---- lightbox ---- */
+  var lb = document.getElementById("lb"),
+      lbimg = document.getElementById("lbimg"),
+      lbcount = document.getElementById("lbcount"),
+      cur = 1, lastFocus = null;
+
+  function pad(n){ return n < 10 ? "0"+n : ""+n; }
+  function show(n){
+    cur = n < 1 ? PAGES : (n > PAGES ? 1 : n);
+    lbimg.src = "assets/carousel/page-"+pad(cur)+".jpg";
+    lbimg.alt = labels[cur-1];
+    lbcount.textContent = "Page "+cur+" of "+PAGES;
+  }
+  function open(n){
+    lastFocus = document.activeElement;
+    show(n);
+    lb.classList.add("on");
+    document.body.style.overflow = "hidden";
+    document.getElementById("lbclose").focus();
+  }
+  function close(){
+    lb.classList.remove("on");
+    document.body.style.overflow = "";
+    if(lastFocus){ lastFocus.focus(); }
+  }
+
+  sheet.addEventListener("click", function(e){
+    var b = e.target.closest("button[data-page]");
+    if(b){ open(parseInt(b.getAttribute("data-page"),10)); }
+  });
+  document.getElementById("lbprev").addEventListener("click", function(){ show(cur-1); });
+  document.getElementById("lbnext").addEventListener("click", function(){ show(cur+1); });
+  document.getElementById("lbclose").addEventListener("click", close);
+  lb.addEventListener("click", function(e){ if(e.target === lb || e.target === lbimg){ close(); } });
+  document.addEventListener("keydown", function(e){
+    if(!lb.classList.contains("on")) return;
+    if(e.key === "Escape"){ close(); }
+    if(e.key === "ArrowLeft"){ show(cur-1); }
+    if(e.key === "ArrowRight"){ show(cur+1); }
+  });
+
+  /* ---- instagram thumbnail may not be dropped in yet ---- */
+  var igimg = document.querySelector("#igshot img");
+  igimg.addEventListener("error", function(){
+    document.getElementById("igshot").classList.add("missing");
+    igimg.remove();
+  });
+})();
+</script>
+
+</body>
+</html>
