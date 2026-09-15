@@ -232,16 +232,24 @@ h2{
 }
 .spec dd strong{color:var(--ink);font-weight:500}
 
-/* ---------- evidence grid ---------- */
+/* ---------- evidence row ---------- */
+/* Pieces keep their true aspect ratio, so a vertical reel and a widescreen
+   film sit side by side at sizes that actually look like each other. */
 .evidence{
-  display:grid;
-  gap:26px;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  align-items:start;
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  align-items:flex-start;
 }
-.evidence.wide{grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
-
-figure.piece{margin:0;display:flex;flex-direction:column;gap:10px}
+figure.piece{
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-width:0;
+}
+.piece.v{flex:0 1 272px;max-width:100%}
+.piece.h{flex:0 1 468px;max-width:100%}
 .well{
   position:relative;
   background:var(--well);
@@ -268,12 +276,13 @@ img.poster{z-index:1;transition:opacity .25s}
   inset:0;
   z-index:3;
   border:0;
-  background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,.05) 55%,rgba(0,0,0,.25));
+  background:linear-gradient(to top,rgba(0,0,0,.6),rgba(0,0,0,.04) 58%,rgba(0,0,0,.28));
   color:#fff;
   cursor:pointer;
   display:flex;
   align-items:flex-end;
   justify-content:flex-start;
+  gap:10px;
   padding:14px;
   transition:opacity .25s;
   font-family:var(--mono);
@@ -281,31 +290,20 @@ img.poster{z-index:1;transition:opacity .25s}
   letter-spacing:.12em;
   text-transform:uppercase;
 }
-.playbtn span{
-  display:inline-flex;
-  align-items:center;
-  gap:9px;
+.playbtn svg{
+  flex:0 0 auto;
+  width:32px;height:32px;
+  transition:transform .15s;
 }
-.playbtn span::before{
-  content:"";
-  width:30px;height:30px;
-  border-radius:50%;
-  border:1.5px solid rgba(255,255,255,.85);
-  background:rgba(0,0,0,.35);
-  background-image:linear-gradient(to right,transparent 0,transparent 100%);
-  display:inline-block;
-  position:relative;
+.playbtn .disc{
+  fill:rgba(0,0,0,.4);
+  stroke:rgba(255,255,255,.85);
+  stroke-width:1.5;
 }
-.playbtn span::after{
-  content:"";
-  position:absolute;
-  left:11px;
-  width:0;height:0;
-  border-left:9px solid #fff;
-  border-top:6px solid transparent;
-  border-bottom:6px solid transparent;
-}
-.playbtn:hover span::before{border-color:#fff;background:rgba(0,0,0,.6)}
+.playbtn .tri{fill:#fff}
+.playbtn .lbl{padding-bottom:9px}
+.playbtn:hover svg{transform:scale(1.07)}
+.playbtn:hover .disc{stroke:#fff;fill:rgba(0,0,0,.65)}
 
 figcaption{
   display:flex;
@@ -562,7 +560,7 @@ footer{
     </div>
 
     <div class="mast-grid">
-      <h1>Four machines that<br>make video <em>without<br>a shoot.</em></h1>
+      <h1>Four machines that make video <em>without a shoot.</em></h1>
       <p class="standfirst">
         <strong>toogood</strong> builds production systems, not one-off films. Each of these
         four takes a single setup and runs it again and again, so the second video costs a
@@ -598,11 +596,11 @@ footer{
       </dl>
     </div>
 
-    <div class="evidence wide">
-      <figure class="piece">
+    <div class="evidence">
+      <figure class="piece h">
         <div class="well r169" data-src="assets/video/founder-clone.mp4">
-          <img class="poster" src="assets/poster/founder-clone.jpg" alt="AI clone of Kushank Joshi, talking to camera" loading="lazy">
-          <button class="playbtn" type="button" aria-label="Play the AI clone sample"><span>Play 0:18</span></button>
+          <img class="poster" src="assets/poster/founder-clone.jpg" alt="AI clone of Kushank Joshi, talking to camera">
+          <button class="playbtn" type="button" aria-label="Play the AI clone sample"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle class="disc" cx="16" cy="16" r="15"/><path class="tri" d="M13 10.2 L23.2 16 L13 21.8 Z"/></svg><span class="lbl">Play 0:18</span></button>
         </div>
         <figcaption>
           <span class="cap-name">The clone itself</span>
@@ -611,10 +609,10 @@ footer{
         </figcaption>
       </figure>
 
-      <figure class="piece">
+      <figure class="piece v">
         <div class="well r916" data-src="assets/video/founder-reel.mp4">
-          <img class="poster" src="assets/poster/founder-reel.jpg" alt="Founder talking head reel with captions and overlay graphics" loading="lazy">
-          <button class="playbtn" type="button" aria-label="Play the finished founder reel"><span>Play 0:19</span></button>
+          <img class="poster" src="assets/poster/founder-reel.jpg" alt="Founder talking head reel with captions and overlay graphics">
+          <button class="playbtn" type="button" aria-label="Play the finished founder reel"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle class="disc" cx="16" cy="16" r="15"/><path class="tri" d="M13 10.2 L23.2 16 L13 21.8 Z"/></svg><span class="lbl">Play 0:19</span></button>
         </div>
         <figcaption>
           <span class="cap-name">What comes off the line</span>
@@ -646,10 +644,10 @@ footer{
     </div>
 
     <div class="evidence">
-      <figure class="piece">
+      <figure class="piece v">
         <div class="well r916" data-src="assets/video/editing-agent.mp4">
-          <img class="poster" src="assets/poster/editing-agent.jpg" alt="Black and white talking head cut from a long form interview" loading="lazy">
-          <button class="playbtn" type="button" aria-label="Play the editing agent sample"><span>Play 0:45</span></button>
+          <img class="poster" src="assets/poster/editing-agent.jpg" alt="Black and white talking head cut from a long form interview">
+          <button class="playbtn" type="button" aria-label="Play the editing agent sample"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle class="disc" cx="16" cy="16" r="15"/><path class="tri" d="M13 10.2 L23.2 16 L13 21.8 Z"/></svg><span class="lbl">Play 0:45</span></button>
         </div>
         <figcaption>
           <span class="cap-name">Cut by the agent</span>
@@ -681,10 +679,10 @@ footer{
     </div>
 
     <div class="evidence">
-      <figure class="piece">
+      <figure class="piece v">
         <div class="well r916" data-src="assets/video/sop-makeba.mp4">
-          <img class="poster" src="assets/poster/sop-makeba.jpg" alt="Staff training module titled Five things, every shift" loading="lazy">
-          <button class="playbtn" type="button" aria-label="Play the staff training module"><span>Play 1:15</span></button>
+          <img class="poster" src="assets/poster/sop-makeba.jpg" alt="Staff training module titled Five things, every shift">
+          <button class="playbtn" type="button" aria-label="Play the staff training module"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle class="disc" cx="16" cy="16" r="15"/><path class="tri" d="M13 10.2 L23.2 16 L13 21.8 Z"/></svg><span class="lbl">Play 1:15</span></button>
         </div>
         <figcaption>
           <span class="cap-name">Staff training module</span>
@@ -693,10 +691,10 @@ footer{
         </figcaption>
       </figure>
 
-      <figure class="piece">
+      <figure class="piece v">
         <div class="well r916" data-src="assets/video/brand-ip-lion.mp4">
-          <img class="poster" src="assets/poster/brand-ip-lion.jpg" alt="Lion character presenting inside a kitchen" loading="lazy">
-          <button class="playbtn" type="button" aria-label="Play the owned character sample"><span>Play 0:37</span></button>
+          <img class="poster" src="assets/poster/brand-ip-lion.jpg" alt="Lion character presenting inside a kitchen">
+          <button class="playbtn" type="button" aria-label="Play the owned character sample"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle class="disc" cx="16" cy="16" r="15"/><path class="tri" d="M13 10.2 L23.2 16 L13 21.8 Z"/></svg><span class="lbl">Play 0:37</span></button>
         </div>
         <figcaption>
           <span class="cap-name">An owned character</span>
@@ -705,10 +703,10 @@ footer{
         </figcaption>
       </figure>
 
-      <figure class="piece">
+      <figure class="piece h">
         <div class="well r169" data-src="assets/video/school-series.mp4">
-          <img class="poster" src="assets/poster/school-series.jpg" alt="Animated series episode set at an amusement park gate" loading="lazy">
-          <button class="playbtn" type="button" aria-label="Play the school series sample"><span>Play 1:05</span></button>
+          <img class="poster" src="assets/poster/school-series.jpg" alt="Animated series episode set at an amusement park gate">
+          <button class="playbtn" type="button" aria-label="Play the school series sample"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle class="disc" cx="16" cy="16" r="15"/><path class="tri" d="M13 10.2 L23.2 16 L13 21.8 Z"/></svg><span class="lbl">Play 1:05</span></button>
         </div>
         <figcaption>
           <span class="cap-name">Series video, for a school</span>
